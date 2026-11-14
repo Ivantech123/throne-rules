@@ -1,0 +1,140 @@
+{
+  "kind": "throne-route-profile",
+  "v": 1,
+  "name": "Как дома (Cudy)",
+  "default_outbound": "proxy",
+  "rules": [
+    {
+      "type": "custom",
+      "protocol": [
+        "bittorrent"
+      ],
+      "action": "route",
+      "outbound": "direct",
+      "name": "Торренты напрямую"
+    },
+    {
+      "type": "custom",
+      "ip_is_private": true,
+      "action": "route",
+      "outbound": "direct",
+      "name": "Локальная сеть напрямую"
+    },
+    {
+      "type": "custom",
+      "domain_suffix": [
+        "elevenlabs.io",
+        "elevenlabs.com",
+        "elevenlabs.ai"
+      ],
+      "action": "route",
+      "outbound": "proxy",
+      "name": "ElevenLabs"
+    },
+    {
+      "type": "custom",
+      "domain_suffix": [
+        "ea.com",
+        "origin.com",
+        "tnt-ea.com",
+        "eac-cdn.com",
+        "eaplay.com",
+        "easports.com",
+        "eamobile.com",
+        "ea.gg",
+        "origin-a.akamaihd.net",
+        "eaassets-a.akamaihd.net"
+      ],
+      "action": "route",
+      "outbound": "proxy",
+      "name": "Мои сайты: через VPN"
+    },
+    {
+      "type": "custom",
+      "domain_suffix": [
+        "twitch.tv",
+        "ttvnw.net",
+        "jtvnw.net",
+        "twitchcdn.net",
+        "twitchsvc.net",
+        "ext-twitch.tv",
+        "twitchapps.com",
+        "live-video.net",
+        "twitch.a2z.com",
+        "twitchstatic.com"
+      ],
+      "action": "route",
+      "outbound": "direct",
+      "name": "Twitch напрямую"
+    },
+    {
+      "type": "custom",
+      "domain_suffix": [
+        "scdn.co",
+        "pscdn.co",
+        "spotifycdn.com",
+        "spotifycdn.net",
+        "spotilocal.com",
+        "spotify.design"
+      ],
+      "domain_keyword": [
+        "spotify"
+      ],
+      "action": "route",
+      "outbound": "proxy",
+      "name": "Spotify через VPN"
+    },
+    {
+      "type": "custom",
+      "domain_suffix": [
+        "play.google.com",
+        "play.googleapis.com",
+        "play-fe.googleapis.com",
+        "play-lh.googleusercontent.com",
+        "playatoms-pa.googleapis.com",
+        "android.clients.google.com",
+        "android.googleapis.com",
+        "clientservices.googleapis.com",
+        "gvt1.com",
+        "gvt2.com",
+        "gvt3.com",
+        "ggpht.com"
+      ],
+      "action": "route",
+      "outbound": "proxy",
+      "name": "Google Play через VPN"
+    },
+    {
+      "type": "custom",
+      "rule_set": [
+        "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ru.srs",
+        "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-ru.srs"
+      ],
+      "action": "route",
+      "outbound": "direct",
+      "name": "Российские сайты и IP напрямую"
+    },
+    {
+      "type": "custom",
+      "domain_suffix": [
+        "ru",
+        "su",
+        "xn--p1ai",
+        "xn--80asehdb",
+        "xn--d1acj3b"
+      ],
+      "action": "route",
+      "outbound": "direct",
+      "name": "Домены .ru .su .рф напрямую"
+    },
+    {
+      "type": "custom",
+      "network": "udp",
+      "port": [
+        443
+      ],
+      "action": "reject",
+      "name": "Блок QUIC (ускоряет загрузки)"
+    }
+  ]
+}
