@@ -22,6 +22,21 @@
     },
     {
       "type": "custom",
+      "process_name": [
+        "qbittorrent.exe",
+        "utorrent.exe",
+        "BitTorrent.exe",
+        "transmission-qt.exe",
+        "tixati.exe",
+        "Motrix.exe",
+        "fdm.exe"
+      ],
+      "outbound": "direct",
+      "action": "route",
+      "name": "Торрент-клиенты напрямую"
+    },
+    {
+      "type": "custom",
       "domain_suffix": [
         "elevenlabs.io",
         "elevenlabs.com",
@@ -48,6 +63,97 @@
       "action": "route",
       "outbound": "proxy",
       "name": "Мои сайты: через VPN"
+    },
+    {
+      "type": "custom",
+      "process_name": [
+        "Discord.exe",
+        "DiscordPTB.exe",
+        "DiscordCanary.exe",
+        "Telegram.exe",
+        "AyuGram.exe",
+        "Kotatogram.exe",
+        "Spotify.exe",
+        "EADesktop.exe",
+        "EABackgroundService.exe",
+        "EALauncher.exe",
+        "Origin.exe",
+        "ChatGPT.exe",
+        "Claude.exe",
+        "Perplexity.exe",
+        "Cursor.exe",
+        "Windsurf.exe",
+        "WhatsApp.exe",
+        "Signal.exe",
+        "Instagram.exe",
+        "Notion.exe",
+        "Figma.exe"
+      ],
+      "outbound": "proxy",
+      "action": "route",
+      "name": "Программы через VPN"
+    },
+    {
+      "type": "custom",
+      "rule_set": [
+        "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-youtube.srs"
+      ],
+      "outbound": "proxy",
+      "action": "route",
+      "name": "YouTube через VPN"
+    },
+    {
+      "type": "custom",
+      "rule_set": [
+        "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-discord.srs"
+      ],
+      "outbound": "proxy",
+      "action": "route",
+      "name": "Discord через VPN"
+    },
+    {
+      "type": "custom",
+      "rule_set": [
+        "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-telegram.srs"
+      ],
+      "ip_cidr": [
+        "91.108.4.0/22",
+        "91.108.8.0/22",
+        "91.108.12.0/22",
+        "91.108.16.0/22",
+        "91.108.20.0/22",
+        "91.108.56.0/22",
+        "95.161.64.0/20",
+        "149.154.160.0/20",
+        "185.76.151.0/24"
+      ],
+      "outbound": "proxy",
+      "action": "route",
+      "name": "Telegram через VPN"
+    },
+    {
+      "type": "custom",
+      "rule_set": [
+        "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-openai.srs",
+        "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-anthropic.srs",
+        "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ai-!cn.srs"
+      ],
+      "outbound": "proxy",
+      "action": "route",
+      "name": "Нейросети через VPN"
+    },
+    {
+      "type": "custom",
+      "rule_set": [
+        "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-instagram.srs",
+        "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-facebook.srs",
+        "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-twitter.srs",
+        "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-linkedin.srs",
+        "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tiktok.srs"
+      ],
+      "outbound": "proxy",
+      "action": "route",
+      "name": "Соцсети через VPN"
     },
     {
       "type": "custom",
@@ -103,6 +209,29 @@
       "action": "route",
       "outbound": "proxy",
       "name": "Google Play через VPN"
+    },
+    {
+      "type": "custom",
+      "rule_set": [
+        "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-yandex.srs",
+        "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-vk.srs",
+        "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-mailru.srs"
+      ],
+      "outbound": "direct",
+      "action": "route",
+      "name": "Яндекс, VK, Mail.ru напрямую"
+    },
+    {
+      "type": "custom",
+      "domain_suffix": [
+        "steamcontent.com",
+        "steamserver.net",
+        "steampipe.akamaized.net",
+        "steamcdn-a.akamaihd.net"
+      ],
+      "outbound": "direct",
+      "action": "route",
+      "name": "Загрузки Steam напрямую"
     },
     {
       "type": "custom",
