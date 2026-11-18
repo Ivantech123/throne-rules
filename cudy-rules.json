@@ -49,6 +49,18 @@
     {
       "type": "custom",
       "domain_suffix": [
+        "tlauncher.org",
+        "tl.vg",
+        "fastrepo.org",
+        "tlmods.org"
+      ],
+      "action": "route",
+      "outbound": "direct",
+      "name": "Мои сайты: напрямую"
+    },
+    {
+      "type": "custom",
+      "domain_suffix": [
         "ea.com",
         "origin.com",
         "tnt-ea.com",
